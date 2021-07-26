@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-const ButtonDiv = styled.div`
-    width: 10%;
-    height: 100%;
+const ButtonDiv = styled.button`
+    flex-grow: 1;
     background-color: blue;
     padding: 1rem;
     font-size: 2rem;
@@ -11,7 +10,7 @@ const HeaderButton = (props) => {
     return(
         <>
             <ButtonDiv>
-                TEST
+                {props.children}
             </ButtonDiv>
         </>
     );
