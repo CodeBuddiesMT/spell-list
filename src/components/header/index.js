@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HeaderButton, ExampleButton } from '../buttons';
+import { HeaderButton } from '../buttons';
 
 const HeaderDiv = styled.div`
     position: absolute;
@@ -25,27 +25,34 @@ const AccountDiv = styled.div`
     background-color: red;
     font-size: 2rem;
 `;
+
+
+
 const Header = (props) => {
+
+    const handleClick = (params) => {
+        console.log(`You clicked the ${params} button!`);
+    } 
 
     return (
         <>
             <HeaderDiv>
                 <ButtonsDiv>
-                    <HeaderButton>
+                    <HeaderButton handleClick={handleClick}>
                         Thing1
                     </HeaderButton>
-                    <HeaderButton>
+                    <HeaderButton handleClick={handleClick}>
                         Thing2
                     </HeaderButton>
-                    <HeaderButton>
+                    <HeaderButton handleClick={handleClick}>
                         Thing3
                     </HeaderButton>
-                    <HeaderButton>
+                    <HeaderButton handleClick={handleClick}>
                         Thing4
                     </HeaderButton>
                 </ButtonsDiv>
                 <AccountDiv>
-                    <HeaderButton>
+                    <HeaderButton handleClick={handleClick}>
                         Account
                     </HeaderButton>
                 </AccountDiv>
