@@ -3,21 +3,22 @@ import React from 'react'
 
 const ButtonDiv = styled.button`
     flex-grow: 1;
-    background-color: blue;
+    color: white;
+    background-color: transparent;
     padding: 1rem;
     font-size: 2rem;
-    border-radius: 1rem;
+    border-radius: .25rem;
     border: none;
-    margin: .5rem;
+    margin: auto;
+    transition: 0.3s;
+    max-width: 10rem;
     &:hover {
-        background-color: #7d7dfd;
+        color: #000000;
+        border: solid;
     }
 `;
 
-
 const HeaderButton = (props) => { 
-
-    console.log(props);
 
     const {children, handleClick} = props
 

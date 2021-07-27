@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react'
 
 const ButtonDiv = styled.button`
     flex-grow: 1;
@@ -10,7 +11,7 @@ const HeaderButton = (props) => {
     return(
         <>
             <ButtonDiv>
-                {props.children}
+                {props.childrren}
             </ButtonDiv>
         </>
     );
