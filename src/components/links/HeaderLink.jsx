@@ -21,7 +21,8 @@ const ButtonContainer = styled.div`
 const ButtonDiv = styled.button`
   position: relative;
   top: 50%;
-  transform: translate(0, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: inherit;
   background-color: transparent;
   padding: 1rem;
