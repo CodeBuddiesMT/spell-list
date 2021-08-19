@@ -8,10 +8,14 @@ import Header from "./components/header";
 
 import styled from "styled-components";
 
+import PrivateRoute from "./components/utils/PrivateRoute";
+import Login from "./views/login";
 import Spells from "./views/spells";
 import Items from "./views/items";
 import Races from "./views/races";
 import Classes from "./views/classes";
+import Characters from "./views/Characters";
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -21,13 +25,16 @@ const Container = styled.div`
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      {/* <LoginModal display={someConditional} /> */}
       <Container>
         <Header />
         <Switch>
+          <Route exact path="/login" component={Login} />
           <Route path="/spells" component={Spells} />
           <Route path="/items" component={Items} />
           <Route path="/races" component={Races} />
           <Route path="/classes" component={Classes} />
+          <PrivateRoute path="/characters" component={Characters} />
         </Switch>
       </Container>
     </BrowserRouter>

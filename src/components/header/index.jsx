@@ -53,6 +53,7 @@ const Header = (props) => {
           <HeaderLink to="items">Items</HeaderLink>
           <HeaderLink to="classes">Classes</HeaderLink>
           <HeaderLink to="races">Races</HeaderLink>
+          <HeaderLink to="characters">Characters</HeaderLink>
         </ButtonsDiv>
         <AccountDiv>
           <HeaderLink to="account">Account</HeaderLink>
