@@ -7,7 +7,7 @@ const Container = styled.div`
   background-color: #6d6d6d;
 `;
 
-const register = () => {
+const Registration = () => {
     const { register, handleSubmit, errors } = useForm();
     const [errorStatus, setErrorStatus] = useState(null);
 
@@ -16,4 +16,4 @@ const register = () => {
     )
 }
 
-export default register
+export default Registration
