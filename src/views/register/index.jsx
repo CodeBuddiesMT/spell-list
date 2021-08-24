@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useForm } from 'react-hook-form';
 
 const Container = styled.div`
   width: 100%;
@@ -7,6 +8,8 @@ const Container = styled.div`
 `;
 
 const register = () => {
+    const { register, handleSubmit, errors } = useForm();
+    const [errorStatus, setErrorStatus] = useState(null);
 
     return (
         <Container>Register!</Container>
