@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from "styled-components";
 import { useForm } from 'react-hook-form';
-import { TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 const Container = styled.div`
   width: 100%;
@@ -15,6 +15,7 @@ const Container = styled.div`
       background-color: gray;
       display: flex;
       flex-direction: column;
+      padding: 1%;
   }
 `;
 
@@ -28,6 +29,7 @@ const Registration = () => {
                 <TextField
                     required
                     label="Username"
+                    variant="outlined"
                 >
                     Username
                 </TextField>
@@ -35,9 +37,15 @@ const Registration = () => {
                     required
                     label="Password"
                     type="password"
+                    variant="outlined"
                 >
                     Password
                 </TextField>
+                <Button
+                    variant="contained"
+                >
+                    Submit
+                </Button>
             </form>
         </Container>
     )
