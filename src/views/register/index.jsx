@@ -44,7 +44,7 @@ const Registration = () => {
                 <Button
                     variant="contained"
                 >
-                    Submit
+                    Register
                 </Button>
             </form>
         </Container>
