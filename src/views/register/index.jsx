@@ -25,10 +25,17 @@ const Registration = () => {
     return (
         <Container>
             <form>
-                <TextField>
+                <TextField
+                    required
+                    label="Username"
+                >
                     Username
                 </TextField>
-                <TextField>
+                <TextField
+                    required
+                    label="Password"
+                    type="password"
+                >
                     Password
                 </TextField>
             </form>
