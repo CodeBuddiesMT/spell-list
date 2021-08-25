@@ -16,14 +16,40 @@ const Container = styled.div`
       flex-direction: column;
       padding: 1%;
 
-      .registration-input {
+      .login-input {
           margin: 2%;
       }
   }
 `;
 
 const Login = () => {
-  return <Container>Login!</Container>;
+
+  return (
+    <Container>
+      <form>
+        <TextField
+          className="login-input"
+          name="username"
+          label="username"
+          variant="outlined"
+        />
+        <TextField
+          className="login-input"
+          name="password"
+          label="password"
+          type="password"
+          variant="outlined"
+        />
+        <Button
+          type="submit"
+          variant="contained"
+          
+        >
+          Log In
+        </Button>
+      </form>
+    </Container>
+  )
 };
 
 export default Login;
