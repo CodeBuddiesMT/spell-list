@@ -12,22 +12,30 @@ const Container = styled.div`
   align-items: center;
 
   form {
-      background-color: gray;
+      background-color: white;
       display: flex;
       flex-direction: column;
       padding: 1%;
+
+      .registration-input {
+          margin: 2%;
+      }
   }
 `;
 
 const Registration = () => {
     const { register, handleSubmit, errors } = useForm();
-    const [errorStatus, setErrorStatus] = useState(null);
+    const [errorStatus, setErrorStatus] = useState(false);
+    const [usernameErrorStatus, setUsernameErrorStatus] = useState(false)
+    const [passErrorStatus, setPassErrorStatus] = useState(false)
 
     return (
         <Container>
             <form>
                 <TextField
                     required
+                    error={usernameErrorStatus}
+                    className="registration-input"
                     label="Username"
                     variant="outlined"
                 >
@@ -35,6 +43,8 @@ const Registration = () => {
                 </TextField>
                 <TextField
                     required
+                    error={passErrorStatus}
+                    className="registration-input"
                     label="Password"
                     type="password"
                     variant="outlined"
