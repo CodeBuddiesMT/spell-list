@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from "styled-components";
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Button, TextField } from '@material-ui/core';
 
 const Container = styled.div`
@@ -24,23 +24,15 @@ const Container = styled.div`
 `;
 
 const Registration = () => {
-    const { register, handleSubmit, formState: { errors }, control } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [errorStatus, setErrorStatus] = useState(false);
-    const [usernameErrorStatus, setUsernameErrorStatus] = useState(false)
-    const [passErrorStatus, setPassErrorStatus] = useState(false)
+    
 
     const onSubmit = data => console.log(data)
 
     return (
         <Container>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {/* <Controller
-                    name="username"
-                    control={control}
-                    rules={{ required: true, minLength: 3, maxLength: 15 }}
-                    render={({ field}) => <TextField {...field} />}
-                />
-                {errors.username && <p>Username required</p>} */}
                 <TextField
                     error={!!errors.username}
                     className="registration-input"
