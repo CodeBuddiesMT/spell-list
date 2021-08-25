@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from "styled-components";
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { Button, TextField } from '@material-ui/core';
 
 const Container = styled.div`
@@ -24,35 +24,67 @@ const Container = styled.div`
 `;
 
 const Registration = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, formState: { errors }, control } = useForm();
     const [errorStatus, setErrorStatus] = useState(false);
     const [usernameErrorStatus, setUsernameErrorStatus] = useState(false)
     const [passErrorStatus, setPassErrorStatus] = useState(false)
 
+    const onSubmit = data => console.log(data)
+
     return (
         <Container>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                {/* <Controller
+                    name="username"
+                    control={control}
+                    rules={{ required: true, minLength: 3, maxLength: 15 }}
+                    render={({ field}) => <TextField {...field} />}
+                />
+                {errors.username && <p>Username required</p>} */}
                 <TextField
-                    required
-                    error={usernameErrorStatus}
+                    error={!!errors.username}
                     className="registration-input"
-                    label="Username"
+                    name="username"
+                    label="username"
                     variant="outlined"
-                >
-                    Username
-                </TextField>
+                    {...register("username", {
+                        required: "Username is required.",
+                        minLength: {
+                            value: 3,
+                            message: "Username must be between 3 and 15 characters long."
+                        },
+                        maxLength: {
+                            value: 15,
+                            message: "Username must be between 3 and 15 characters long."
+                        }
+                    })}
+                />
+                {errors.username && (
+                    <span>{errors.username.message}</span>
+                )}
                 <TextField
-                    required
-                    error={passErrorStatus}
+                    error={!!errors.password}
                     className="registration-input"
+                    name="password"
                     label="Password"
                     type="password"
                     variant="outlined"
-                >
-                    Password
-                </TextField>
+                    {...register("password", {
+                        required: "Password is required.",
+                        minLength: {
+                            value: 5,
+                            message: "Password must be between 5 and 15 characters long."
+                        },
+                        maxLength: {
+                            value: 15,
+                            message: "Password muse be between 5 and 15 characters long."
+                        }
+                    })}
+                />
+                {errors.password && <span>{errors.password.message}</span>}
                 <Button
                     variant="contained"
+                    type="submit"
                 >
                     Register
                 </Button>
