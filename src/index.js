@@ -14,7 +14,7 @@ import Spells from "./views/spells";
 import Items from "./views/items";
 import Races from "./views/races";
 import Classes from "./views/classes";
-import Characters from "./views/Characters";
+import Characters from "./views/characters";
 
 const Container = styled.div`
   width: 100%;
