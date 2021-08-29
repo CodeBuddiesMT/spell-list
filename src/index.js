@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 import PrivateRoute from "./components/utils/PrivateRoute";
 import Login from "./views/login";
+import Register from "./views/register";
 import Spells from "./views/spells";
 import Items from "./views/items";
 import Races from "./views/races";
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Header />
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/spells" component={Spells} />
           <Route path="/items" component={Items} />
           <Route path="/races" component={Races} />
